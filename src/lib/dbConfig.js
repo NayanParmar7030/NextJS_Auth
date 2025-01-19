@@ -8,6 +8,7 @@ export async function connect() {
   }
 
   try {
+    console.log('Connecting',process.env.MONGO_URL)
     await mongoose.connect(process.env.MONGO_URL, {
       useNewUrlParser: true,
       useUnifiedTopology: true,
@@ -20,3 +21,5 @@ export async function connect() {
     throw new Error('MongoDB connection error');
   }
 }
+
+export default connect;
